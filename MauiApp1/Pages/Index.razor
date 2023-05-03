@@ -1,0 +1,22 @@
+﻿@page "/"
+@using Microsoft.Extensions.Localization;
+@inject IStringLocalizer<BootstrapBlazor.Components.AutoComplete> Localizer
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<div>@Test</div>
+
+@code {
+    private string? Test { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        Test = Localizer["PlaceHolder"];
+    }
+}
